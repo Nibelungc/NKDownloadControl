@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "NKDownloadControl.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet NKDownloadControl* downloadControl;
 
 @end
 
@@ -23,5 +26,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)downloadTapped:(id)sender {
+    NSLog(@"Download action");
+}
+
 
 @end
