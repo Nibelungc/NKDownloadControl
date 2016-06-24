@@ -12,13 +12,15 @@
 
 @property (assign, nonatomic, getter=isDownloading) BOOL downloading;
 
-@property (strong, nonatomic) CAShapeLayer* progressLayer;
-
 @property (strong, nonatomic) UIBezierPath* downloadButtonPath;
 
 @property (strong, nonatomic) UIBezierPath* cancelButtonPath;
 
+@property (strong, nonatomic) UIBezierPath* progressPath;
+
 @property (strong, nonatomic) UIColor* circleBackgroundHighlightedColor;
+
+@property (strong, nonatomic) CAShapeLayer* progressLayer;
 
 @end
 
@@ -148,23 +150,20 @@
 }
 
 - (UIBezierPath *)downloadButtonPath {
-    if (!_downloadButtonPath){
-        _downloadButtonPath = [self downloadButtonPathInRect: self.bounds];
-    }
-    return _downloadButtonPath;
+    return [self downloadButtonPathInRect: self.bounds];
 }
 
 - (UIBezierPath *)cancelButtonPath {
-    if (!_cancelButtonPath){
-        _cancelButtonPath = [self cancelDownloadButtonInRect: self.bounds];
-    }
-    return _cancelButtonPath;
+    return [self cancelDownloadButtonInRect: self.bounds];
+}
+
+- (UIBezierPath *)progressPath {
+    return [self progressInRect: self.bounds];
 }
 
 - (CAShapeLayer *)progressLayer {
     if (!_progressLayer){
         _progressLayer = [CAShapeLayer layer];
-        _progressLayer.path = [self progressInRect: self.bounds].CGPath;
         [self configureLayer: _progressLayer];
         [_progressLayer setStrokeColor: _progressTintColor.CGColor];
     }
@@ -175,6 +174,10 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
+    CAShapeLayer* layer = (CAShapeLayer *) self.layer;
+    layer.path = self.isDownloading ? self.cancelButtonPath.CGPath : self.downloadButtonPath.CGPath;
+    self.progressLayer.path = self.progressPath.CGPath;
 }
 
 #pragma mark - Animations

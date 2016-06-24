@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,12 +21,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek1-5v-XXo" customClass="NKDownloadControl">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2z4-dR-aEs"/>
+                                    <constraint firstAttribute="width" secondItem="ek1-5v-XXo" secondAttribute="height" multiplier="1:1" id="54T-8u-Iog"/>
                                     <constraint firstAttribute="height" constant="200" id="bQP-xu-bch"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2z4-dR-aEs"/>
+                                        <exclude reference="bQP-xu-bch"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="downloadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WsW-hT-w1n"/>
                                 </connections>
@@ -43,6 +52,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BlW-s8-Ifu" secondAttribute="trailing" constant="8" id="Prg-1c-arg"/>
                             <constraint firstItem="BlW-s8-Ifu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="YAZ-2a-auT"/>
                             <constraint firstItem="ek1-5v-XXo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sM1-Y7-OE2"/>
+                            <constraint firstItem="ek1-5v-XXo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="y68-6T-YGg"/>
                         </constraints>
                     </view>
                     <connections>
