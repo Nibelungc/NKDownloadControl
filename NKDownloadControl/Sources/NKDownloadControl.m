@@ -62,6 +62,7 @@
     [self configureLayer: layer];
     [layer addSublayer: self.progressLayer];
     self.progressLayer.strokeEnd = _progress;
+    self.downloading = NO;
 }
 
 - (void)awakeFromNib {
@@ -168,6 +169,11 @@
         [_progressLayer setStrokeColor: _progressTintColor.CGColor];
     }
     return _progressLayer;
+}
+
+- (void)setDownloading:(BOOL)downloading {
+    _downloading = downloading;
+    [_progressLayer setHidden: !downloading];
 }
 
 #pragma mark - Layout subviews
