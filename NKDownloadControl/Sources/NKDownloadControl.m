@@ -77,11 +77,12 @@
     CGFloat paddings = sideSize * 0.30;
     CGRect drawRect = CGRectInset(rect, paddings * 1.25, paddings);
     CGFloat tipHeight = CGRectGetHeight(drawRect) * 0.30;
-    UIBezierPath* path = [self createBezierPath];
+    UIBezierPath* path = [UIBezierPath bezierPath];
     [path moveToPoint: CGPointMake(CGRectGetMidX(drawRect), CGRectGetMinX(drawRect))];
     [path addLineToPoint: CGPointMake(CGRectGetMidX(drawRect), CGRectGetMaxY(drawRect))];
-    [path addLineToPoint: CGPointMake(CGRectGetMinX(drawRect), CGRectGetMaxY(drawRect) - tipHeight)];
-    [path moveToPoint: CGPointMake(CGRectGetMidX(drawRect), CGRectGetMaxY(drawRect))];
+    
+    [path moveToPoint: CGPointMake(CGRectGetMinX(drawRect), CGRectGetMaxY(drawRect) - tipHeight)];
+    [path addLineToPoint: CGPointMake(CGRectGetMidX(drawRect), CGRectGetMaxY(drawRect))];
     [path addLineToPoint: CGPointMake(CGRectGetMaxX(drawRect), CGRectGetMaxY(drawRect) - tipHeight)];
     return path;
 }
@@ -90,19 +91,11 @@
     CGFloat sideSize = MIN(CGRectGetWidth(rect), CGRectGetHeight(rect));
     CGFloat paddings = sideSize * 0.30;
     CGRect drawRect = CGRectInset(rect, paddings * 1.25, paddings * 1.25);
-    UIBezierPath* path = [self createBezierPath];
+    UIBezierPath* path = [UIBezierPath bezierPath];
     [path moveToPoint: CGPointMake(CGRectGetMinX(drawRect), CGRectGetMinY(drawRect))];
     [path addLineToPoint: CGPointMake(CGRectGetMaxX(drawRect), CGRectGetMaxY(drawRect))];
     [path moveToPoint: CGPointMake(CGRectGetMaxX(drawRect), CGRectGetMinY(drawRect))];
     [path addLineToPoint: CGPointMake(CGRectGetMinX(drawRect), CGRectGetMaxY(drawRect))];
-    return path;
-}
-
-- (UIBezierPath *)createBezierPath {
-    UIBezierPath* path = [UIBezierPath bezierPath];
-    [path setLineWidth: _lineWidth];
-    [path setLineCapStyle: kCGLineCapRound];
-    [path setLineJoinStyle: kCGLineJoinRound];
     return path;
 }
 

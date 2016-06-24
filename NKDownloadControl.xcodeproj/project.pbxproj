@@ -8,27 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		803857581D1C3F1600380CA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 803857571D1C3F1600380CA9 /* main.m */; };
-		8038575B1D1C3F1600380CA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8038575A1D1C3F1600380CA9 /* AppDelegate.m */; };
-		8038575E1D1C3F1600380CA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8038575D1D1C3F1600380CA9 /* ViewController.m */; };
-		803857611D1C3F1600380CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8038575F1D1C3F1600380CA9 /* Main.storyboard */; };
-		803857631D1C3F1600380CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803857621D1C3F1600380CA9 /* Assets.xcassets */; };
-		803857661D1C3F1600380CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803857641D1C3F1600380CA9 /* LaunchScreen.storyboard */; };
 		803857801D1C411700380CA9 /* NKDownloadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8038577F1D1C411700380CA9 /* NKDownloadControl.m */; };
+		8082AE1F1D1CE6F200C58B7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8082AE1B1D1CE6F200C58B7A /* AppDelegate.m */; };
+		8082AE201D1CE6F200C58B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */; };
+		8082AE211D1CE6F200C58B7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8082AE1E1D1CE6F200C58B7A /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		803857531D1C3F1600380CA9 /* NKDownloadControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKDownloadControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		803857571D1C3F1600380CA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		803857591D1C3F1600380CA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
-		8038575A1D1C3F1600380CA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		8038575C1D1C3F1600380CA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		8038575D1D1C3F1600380CA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
-		803857601D1C3F1600380CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		803857621D1C3F1600380CA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		803857651D1C3F1600380CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		803857671D1C3F1600380CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8038577E1D1C411700380CA9 /* NKDownloadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKDownloadControl.h; sourceTree = "<group>"; };
 		8038577F1D1C411700380CA9 /* NKDownloadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKDownloadControl.m; sourceTree = "<group>"; };
+		8082AE1A1D1CE6F200C58B7A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NKDownloadControl/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		8082AE1B1D1CE6F200C58B7A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NKDownloadControl/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = NKDownloadControl/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		8082AE1D1D1CE6F200C58B7A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = NKDownloadControl/ViewController.h; sourceTree = SOURCE_ROOT; };
+		8082AE1E1D1CE6F200C58B7A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = NKDownloadControl/ViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +85,11 @@
 		8038577D1D1C40D000380CA9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				803857591D1C3F1600380CA9 /* AppDelegate.h */,
-				8038575A1D1C3F1600380CA9 /* AppDelegate.m */,
-				8038575C1D1C3F1600380CA9 /* ViewController.h */,
-				8038575D1D1C3F1600380CA9 /* ViewController.m */,
-				8038575F1D1C3F1600380CA9 /* Main.storyboard */,
-				803857621D1C3F1600380CA9 /* Assets.xcassets */,
-				803857641D1C3F1600380CA9 /* LaunchScreen.storyboard */,
+				8082AE1A1D1CE6F200C58B7A /* AppDelegate.h */,
+				8082AE1B1D1CE6F200C58B7A /* AppDelegate.m */,
+				8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */,
+				8082AE1D1D1CE6F200C58B7A /* ViewController.h */,
+				8082AE1E1D1CE6F200C58B7A /* ViewController.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -158,9 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803857661D1C3F1600380CA9 /* LaunchScreen.storyboard in Resources */,
-				803857631D1C3F1600380CA9 /* Assets.xcassets in Resources */,
-				803857611D1C3F1600380CA9 /* Main.storyboard in Resources */,
+				8082AE201D1CE6F200C58B7A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,34 +164,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				803857801D1C411700380CA9 /* NKDownloadControl.m in Sources */,
-				8038575E1D1C3F1600380CA9 /* ViewController.m in Sources */,
-				8038575B1D1C3F1600380CA9 /* AppDelegate.m in Sources */,
 				803857581D1C3F1600380CA9 /* main.m in Sources */,
+				8082AE211D1CE6F200C58B7A /* ViewController.m in Sources */,
+				8082AE1F1D1CE6F200C58B7A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8038575F1D1C3F1600380CA9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				803857601D1C3F1600380CA9 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		803857641D1C3F1600380CA9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				803857651D1C3F1600380CA9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		803857681D1C3F1600380CA9 /* Debug */ = {
