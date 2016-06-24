@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) UIBezierPath* cancelButtonPath;
 
+@property (strong, nonatomic) UIColor* circleBackgroundHighlightedColor;
+
 @end
 
 @implementation NKDownloadControl
@@ -46,9 +48,10 @@
 
 - (void)commonInit {
     _circleBackgroundColor = [UIColor groupTableViewBackgroundColor];
+    _circleBackgroundHighlightedColor = [self darkerColorFromColor: _circleBackgroundColor];
     _buttonTintColor = [UIColor blueColor];
     _progressTintColor = [UIColor orangeColor];
-    _lineWidth = 5.0;
+    _lineWidth = 10.0;
 }
 
 - (void)awakeFromNib {
@@ -64,10 +67,21 @@
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect {
-    [_circleBackgroundColor setFill];
+    UIColor* backgroundColor = self.isHighlighted ? _circleBackgroundHighlightedColor : _circleBackgroundColor;
+    [backgroundColor setFill];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextAddEllipseInRect(context, rect);
     CGContextFillEllipseInRect(context, rect);
+}
+
+- (UIColor *)darkerColorFromColor:(UIColor *)color{
+    CGFloat h, s, b, a;
+    if ([color getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:b * 0.85
+                               alpha:a];
+    return nil;
 }
 
 #pragma mark - Bezier Path
@@ -100,6 +114,11 @@
 }
 
 #pragma mark - Custom accessors
+
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    [self setNeedsDisplay];
+}
 
 - (UIBezierPath *)downloadButtonPath {
     if (!_downloadButtonPath){
