@@ -12,6 +12,8 @@
 
 @property (assign, nonatomic, getter=isDownloading) BOOL downloading;
 
+@property (strong, nonatomic) CAShapeLayer* progressLayer;
+
 @property (strong, nonatomic) UIBezierPath* downloadButtonPath;
 
 @property (strong, nonatomic) UIBezierPath* cancelButtonPath;
@@ -52,16 +54,16 @@
     _buttonTintColor = [UIColor blueColor];
     _progressTintColor = [UIColor orangeColor];
     _lineWidth = 10.0;
+    
+    CAShapeLayer* layer = (CAShapeLayer *) self.layer;
+    layer.path = self.isDownloading ? self.cancelButtonPath.CGPath : self.downloadButtonPath.CGPath;
+    [self configureLayer: layer];
+    [layer addSublayer: self.progressLayer];
+    self.progressLayer.strokeEnd = _progress;
 }
 
 - (void)awakeFromNib {
-    CAShapeLayer* layer = (CAShapeLayer *) self.layer;
-    layer.path = self.isDownloading ? self.cancelButtonPath.CGPath : self.downloadButtonPath.CGPath;
-    [layer setStrokeColor: _buttonTintColor.CGColor];
-    [layer setLineWidth: _lineWidth];
-    [layer setFillColor: [UIColor clearColor].CGColor];
-    [layer setLineCap: kCALineCapRound];
-    [layer setLineJoin: kCALineJoinRound];
+    
 }
 
 #pragma mark - Drawing
@@ -82,6 +84,14 @@
                           brightness:b * 0.85
                                alpha:a];
     return nil;
+}
+
+- (void)configureLayer:(CAShapeLayer *)layer {
+    [layer setStrokeColor: _buttonTintColor.CGColor];
+    [layer setLineWidth: _lineWidth];
+    [layer setFillColor: [UIColor clearColor].CGColor];
+    [layer setLineCap: kCALineCapRound];
+    [layer setLineJoin: kCALineJoinRound];
 }
 
 #pragma mark - Bezier Path
@@ -113,7 +123,24 @@
     return path;
 }
 
+- (UIBezierPath *)progressInRect:(CGRect)rect {
+    CGFloat startAngle = - M_PI_2;
+    CGFloat endAngle = 2 * M_PI - M_PI_2;
+    CGRect drawRect = CGRectInset(self.bounds, _lineWidth/2.0, _lineWidth/2.0);
+    UIBezierPath* path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetMidX(drawRect), CGRectGetMidY(drawRect))
+                                                        radius:CGRectGetWidth(drawRect)/2.0
+                                                    startAngle:startAngle
+                                                      endAngle:endAngle
+                                                     clockwise:YES];
+    return path;
+}
+
 #pragma mark - Custom accessors
+
+- (void)setProgress:(CGFloat)progress {
+    _progress = progress;
+    self.progressLayer.strokeEnd = progress;
+}
 
 - (void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
@@ -132,6 +159,16 @@
         _cancelButtonPath = [self cancelDownloadButtonInRect: self.bounds];
     }
     return _cancelButtonPath;
+}
+
+- (CAShapeLayer *)progressLayer {
+    if (!_progressLayer){
+        _progressLayer = [CAShapeLayer layer];
+        _progressLayer.path = [self progressInRect: self.bounds].CGPath;
+        [self configureLayer: _progressLayer];
+        [_progressLayer setStrokeColor: _progressTintColor.CGColor];
+    }
+    return _progressLayer;
 }
 
 #pragma mark - Layout subviews

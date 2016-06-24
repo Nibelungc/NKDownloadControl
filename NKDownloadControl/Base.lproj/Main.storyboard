@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,10 +29,19 @@
                                     <action selector="downloadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WsW-hT-w1n"/>
                                 </connections>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BlW-s8-Ifu">
+                                <rect key="frame" x="26" y="562" width="548" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fgv-tp-egg"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ek1-5v-XXo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1fY-jg-BoL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BlW-s8-Ifu" secondAttribute="bottom" constant="8" id="B4n-lm-WXL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BlW-s8-Ifu" secondAttribute="trailing" constant="8" id="Prg-1c-arg"/>
+                            <constraint firstItem="BlW-s8-Ifu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="YAZ-2a-auT"/>
                             <constraint firstItem="ek1-5v-XXo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sM1-Y7-OE2"/>
                         </constraints>
                     </view>

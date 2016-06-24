@@ -28,7 +28,11 @@
 }
 
 - (IBAction)downloadTapped:(id)sender {
-    NSLog(@"Download action");
+    
+}
+
+- (IBAction)sliderAction:(UISlider*)sender {
+    self.downloadControl.progress = sender.value;
 }
 
 

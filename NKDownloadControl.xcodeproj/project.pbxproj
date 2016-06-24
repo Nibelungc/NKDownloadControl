@@ -12,6 +12,8 @@
 		8082AE1F1D1CE6F200C58B7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8082AE1B1D1CE6F200C58B7A /* AppDelegate.m */; };
 		8082AE201D1CE6F200C58B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */; };
 		8082AE211D1CE6F200C58B7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8082AE1E1D1CE6F200C58B7A /* ViewController.m */; };
+		8082AE261D1D195900C58B7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8082AE221D1D195900C58B7A /* LaunchScreen.storyboard */; };
+		8082AE271D1D195900C58B7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8082AE241D1D195900C58B7A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = NKDownloadControl/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8082AE1D1D1CE6F200C58B7A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = NKDownloadControl/ViewController.h; sourceTree = SOURCE_ROOT; };
 		8082AE1E1D1CE6F200C58B7A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = NKDownloadControl/ViewController.m; sourceTree = SOURCE_ROOT; };
+		8082AE231D1D195900C58B7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NKDownloadControl/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		8082AE251D1D195900C58B7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NKDownloadControl/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 		8038577D1D1C40D000380CA9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				8082AE221D1D195900C58B7A /* LaunchScreen.storyboard */,
+				8082AE241D1D195900C58B7A /* Main.storyboard */,
 				8082AE1A1D1CE6F200C58B7A /* AppDelegate.h */,
 				8082AE1B1D1CE6F200C58B7A /* AppDelegate.m */,
 				8082AE1C1D1CE6F200C58B7A /* Assets.xcassets */,
@@ -152,7 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8082AE271D1D195900C58B7A /* Main.storyboard in Resources */,
 				8082AE201D1CE6F200C58B7A /* Assets.xcassets in Resources */,
+				8082AE261D1D195900C58B7A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +179,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8082AE221D1D195900C58B7A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8082AE231D1D195900C58B7A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8082AE241D1D195900C58B7A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8082AE251D1D195900C58B7A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		803857681D1C3F1600380CA9 /* Debug */ = {

@@ -20,4 +20,6 @@ IB_DESIGNABLE
 
 @property (assign, nonatomic) CGFloat lineWidth;
 
+@property (assign, nonatomic) CGFloat progress;
+
 @end
